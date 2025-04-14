@@ -10,6 +10,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.4",
     "@biomejs/biome": "1.9.4",
+    "@changesets/cli": "^2.29.0",
     "tsup": "^8.4.0",
     "typescript": "^5.8.3"
   },
@@ -40,7 +41,9 @@
     "lint": "bunx biome lint --write ./src",
     "check": "bunx biome check --write src",
     "types": "tsc",
-    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "type": "module"
 }
