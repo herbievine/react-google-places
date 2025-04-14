@@ -1,0 +1,36 @@
+{
+  "name": "react-google-places",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "React hook for Google Places Autocomplete",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build",
+    "format": "bunx biome format --write src",
+    "lint": "bunx biome lint --write ./src",
+    "check": "bunx biome check --write src"
+  },
+  "keywords": [
+    "react",
+    "google places"
+  ],
+  "homepage": "https://github.com/herbievine/react-google-places",
+  "bugs": {
+    "url": "https://github.com/herbievine/react-google-places/issues"
+  },
+  "author": "Herbie Vine <me@herbievine.com> (https://herbievine.com)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/herbievine/react-google-places.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}
