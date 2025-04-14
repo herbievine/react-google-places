@@ -1,36 +1,46 @@
 {
   "name": "react-google-places",
   "version": "1.0.0",
-  "type": "module",
-  "license": "MIT",
-  "description": "React hook for Google Places Autocomplete",
-  "scripts": {
-    "build": "tsc",
-    "ci": "npm run build",
-    "format": "bunx biome format --write src",
-    "lint": "bunx biome lint --write ./src",
-    "check": "bunx biome check --write src"
-  },
-  "keywords": [
-    "react",
-    "google places"
-  ],
-  "homepage": "https://github.com/herbievine/react-google-places",
-  "bugs": {
-    "url": "https://github.com/herbievine/react-google-places/issues"
-  },
   "author": "Herbie Vine <me@herbievine.com> (https://herbievine.com)",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/herbievine/react-google-places.git"
   },
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.17.4",
+    "@biomejs/biome": "1.9.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/herbievine/react-google-places/issues"
+  },
+  "description": "React hook for Google Places Autocomplete",
   "files": [
     "dist"
   ],
-  "dependencies": {
-    "typescript": "^5.8.3"
+  "homepage": "https://github.com/herbievine/react-google-places",
+  "keywords": [
+    "react",
+    "google places"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "default": "./dist/index.cjs"
+    }
   },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.4"
-  }
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup",
+    "ci": "bun run types && bun run check && bun run check-exports && bun run build",
+    "format": "bunx biome format --write src",
+    "lint": "bunx biome lint --write ./src",
+    "check": "bunx biome check --write src",
+    "types": "tsc",
+    "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm"
+  },
+  "type": "module"
 }

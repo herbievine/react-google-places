@@ -1,1 +1,1 @@
-export { add } from "./hook.js";
+export { add } from "./hook";
